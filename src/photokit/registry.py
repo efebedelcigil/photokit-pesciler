@@ -11,13 +11,14 @@ teams will learn to resolve during the workshop.
 
 from .filters.base import Filter
 from .filters.grayscale import GrayscaleFilter
+
 from .filters.sepia import SepiaFilter  # <-- YENI IMPORT
 
 FILTERS: dict[str, type[Filter]] = {
     "grayscale": GrayscaleFilter,
     "sepia": SepiaFilter,  # <-- YENI KAYIT
+    "blur": BlurFilter
 }
-
 
 def get_filter(name: str) -> Filter:
     if name not in FILTERS:
